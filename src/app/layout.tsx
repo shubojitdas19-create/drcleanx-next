@@ -5,6 +5,7 @@ import "./globals.css";
 import "./product-showcase.css";
 import "./about/story.css";
 import "./shop/shop.css";
+import "./home-sections.css";
 
 const manrope = Manrope({
   variable: "--font-manrope",

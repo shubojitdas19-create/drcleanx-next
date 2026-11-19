@@ -1,0 +1,138 @@
+.announcement-bar {
+  height: 38px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #053f94 0%, #0759c7 50%, #0878c9 100%);
+  color: #fff;
+}
+.announcement-track {
+  height: 100%;
+}
+.announcement-item {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+.announcement-item::after {
+  color: #7fd6d3;
+}
+.announcement-code {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+  padding: 2px 9px;
+  border: 1px dashed rgba(255, 255, 255, .7);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .14);
+  font-family: var(--font-geist-mono, ui-monospace, monospace);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.profile-menu {
+  position: relative;
+}
+.profile-menu-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 20;
+  width: 232px;
+  padding: 8px;
+  border: 1px solid #e3ebf5;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(12, 46, 91, .14);
+}
+.profile-menu-panel a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: #233d61;
+  font-size: 13px;
+  font-weight: 600;
+}
+.profile-menu-panel a:hover {
+  background: #eef5ff;
+  color: #0759c7;
+}
+.profile-menu-divider {
+  margin: 6px 4px;
+  border: 0;
+  border-top: 1px solid #edf2f8;
+}
+
+.video-review-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border: 0;
+  border-radius: 16px;
+  background: #0d2740;
+  cursor: pointer;
+}
+.video-review-thumb img,
+.video-review-thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video-review-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 60px;
+  height: 60px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .92);
+  color: #0759c7;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+  transform: translate(-50%, -50%);
+  transition: transform .2s;
+}
+.video-review-thumb:hover .video-review-play {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+.video-review-thumb:focus-visible {
+  outline: 3px solid #0759c7;
+  outline-offset: 3px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+.footer-social a {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid #d5e2f0;
+  border-radius: 50%;
+  color: #0759c7;
+  transition: background .2s, color .2s;
+}
+.footer-social a:hover {
+  background: #0759c7;
+  color: #fff;
+}
+.footer-legal-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer-legal-list a {
+  color: #4f6a85;
+  font-size: 13px;
+}
+.footer-legal-list a:hover {
+  color: #0759c7;
+}
