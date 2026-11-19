@@ -31,6 +31,9 @@ export function StorefrontHero() {
             <div className="product-item product-item--glass">
               <Image alt="DrCleanX glass cleaner bottle" className="hero-product-image" fill priority sizes="(max-width: 680px) 45vw, 25vw" src="/drcleanx-glass-cleaner.png" />
             </div>
+            <div className="product-item product-item--toilet">
+              <Image alt="DrCleanX toilet cleaner bottle" className="hero-product-image" fill priority sizes="(max-width: 680px) 45vw, 25vw" src="/drcleanx-toilet-cleaner.png" />
+            </div>
             <div className="product-item product-item--dishwash">
               <Image alt="DrCleanX dishwash gel bottle" className="hero-product-image" fill priority sizes="(max-width: 680px) 45vw, 25vw" src="/drcleanx-dishwash-gel.png" />
             </div>

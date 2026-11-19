@@ -6,6 +6,14 @@ import { useState } from "react";
 import { ArrowUpRight, Heart, Menu, Search, ShoppingBag, X } from "lucide-react";
 import { useCart } from "@/components/cart-provider";
 
+const offerMessages = [
+  "10% off on your first order",
+  "Use code FIRST10 at checkout",
+  "Free delivery on orders above ₹499",
+  "Shop everyday essentials from Tarakeswar, Hooghly",
+  "Clean today. Fresh tomorrow.",
+];
+
 const links = [
   { label: "Shop all", href: "/shop" },
   { label: "Our story", href: "/about" },
@@ -19,8 +27,15 @@ export function StorefrontHeader() {
   return (
     <>
       <div className="announcement-bar">
-        <span>Clean today. Fresh tomorrow.</span>
-        <span className="announcement-note">Everyday care for every corner of home</span>
+        <div className="announcement-track">
+          {[false, true].map((isRepeat) => (
+            <div aria-hidden={isRepeat || undefined} className="announcement-group" key={isRepeat ? "repeat" : "original"}>
+              {offerMessages.map((message) => (
+                <span className="announcement-item" key={message}>{message}</span>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
       <header className="store-header">
         <button
