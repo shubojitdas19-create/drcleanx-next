@@ -143,12 +143,12 @@ button { font: inherit; }
   .text-cta { font-size: 11px; }
   .hero-trust { gap: 8px; margin-top: 15px; font-size: 9px; }
   .trust-mark { width: 21px; height: 21px; }
-  .hero-visual { position: absolute; inset: auto 0 0; display: grid; width: 100%; height: 56%; place-items: center; }
+  .hero-visual { position: absolute; inset: auto 0 0; display: grid; width: 100%; height: 58%; place-items: center; }
   .hero-visual::before { inset: -13% -12% -3%; }
-  .product-composition { width: min(88vw, 430px); height: 100%; }
-  .product-item--glass { left: 0; width: 35%; height: 72%; }
-  .product-item--toilet { left: 31%; width: 39%; height: 98%; }
-  .product-item--dishwash { right: 0; width: 35%; height: 74%; }
+  .product-composition { width: 100%; max-width: 400px; height: 100%; }
+  .product-item--glass { left: 0; bottom: 6%; width: 34%; height: 70%; }
+  .product-item--toilet { left: 32%; bottom: 0; width: 38%; height: 100%; }
+  .product-item--dishwash { right: 0; bottom: 6%; width: 34%; height: 72%; }
   .hero-badge { gap: 7px; padding: 8px 10px; border-radius: 13px; }
   .hero-badge--streak { top: -4%; right: 1%; }
   .hero-badge--citrus { top: 40%; left: 3%; bottom: auto; width: 40px; height: 40px; justify-content: center; padding: 0; border-radius: 50%; }

@@ -1,5 +1,7 @@
 "use client";
 
+import { Play } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 const INITIAL_VIDEO_COUNT = 4;
@@ -14,6 +16,41 @@ const videoReviews = [
   { id: "review-7", name: "Sourav K.", location: "Asansol", poster: "/products/glass-cleaner.jpg" },
   { id: "review-8", name: "Ishita G.", location: "Siliguri", poster: "/products/home-care-trio.jpg" },
 ];
+
+type VideoReview = (typeof videoReviews)[number];
+
+function VideoReviewCard({ review }: { review: VideoReview }) {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const label = `Play video review by ${review.name}, ${review.location}`;
+
+  return (
+    <figure className="video-review-card">
+      {isPlaying ? (
+        <video
+          aria-label={`Video review by ${review.name}, ${review.location}`}
+          autoPlay
+          className="video-review-thumb"
+          controls
+          playsInline
+          poster={review.poster}
+        >
+          <source src={`/videos/${review.id}.mp4`} type="video/mp4" />
+        </video>
+      ) : (
+        <button aria-label={label} className="video-review-thumb" onClick={() => setIsPlaying(true)} type="button">
+          <Image alt="" className="object-cover" fill sizes="(max-width: 680px) 45vw, 25vw" src={review.poster} />
+          <span aria-hidden="true" className="video-review-play">
+            <Play fill="currentColor" size={22} />
+          </span>
+        </button>
+      )}
+      <figcaption className="video-review-caption">
+        <p className="video-review-name">{review.name}</p>
+        <p className="video-review-location">{review.location}</p>
+      </figcaption>
+    </figure>
+  );
+}
 
 export function VideoReviews() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -32,22 +69,7 @@ export function VideoReviews() {
         <ul aria-label="Customer video reviews" className="video-review-grid">
           {visibleVideos.map((review) => (
             <li key={review.id}>
-              <figure className="video-review-card">
-                <video
-                  aria-label={`Video review by ${review.name}, ${review.location}`}
-                  className="video-review-player"
-                  controls
-                  playsInline
-                  poster={review.poster}
-                  preload="metadata"
-                >
-                  <source src={`/videos/${review.id}.mp4`} type="video/mp4" />
-                </video>
-                <figcaption className="video-review-caption">
-                  <p className="video-review-name">{review.name}</p>
-                  <p className="video-review-location">{review.location}</p>
-                </figcaption>
-              </figure>
+              <VideoReviewCard review={review} />
             </li>
           ))}
         </ul>
